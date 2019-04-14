@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :blogs
+  resources :blogs do
     collection do
-      endpost :confirm
+      post :confirm
     end
+  end
+end
