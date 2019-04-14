@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.fine(params[:id])
+    @blog = Blog.find(params[:id])
   end
 
   private
