@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit, :update]
+
   def index
     @blogs = Blog.all
   end
@@ -37,6 +39,10 @@ class BlogsController < ApplicationController
 
   def blog_params
     params.require(:blog).permit(:title, :content)
+  end
+
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 
 end
